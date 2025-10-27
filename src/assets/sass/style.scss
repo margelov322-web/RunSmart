@@ -1,0 +1,36 @@
+@use './blocks/swiper.scss';
+@use './base/mixins.module.scss';
+@use './blocks/first-screen.scss';
+@use './blocks/header.scss';
+@use './blocks/buttons.scss';
+@use './blocks/consultation.scss';
+@use './blocks/forms.scss';
+@use './blocks/catalog.scss';
+
+@font-face {
+    font-family: 'Museo Sans';
+    src: url('../fonts/MuseoSansCyrl-500.eot');
+    src: url('../fonts/MuseoSansCyrl-500.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MuseoSansCyrl-500.woff') format('woff'),
+    url('../fonts/MuseoSansCyrl-500.ttf') format('truetype');
+    font-weight: 500;
+    
+}
+
+@font-face {
+    font-family: 'Museo Sans';
+    src: url('../fonts/MuseoSansCyrl-100.eot');
+    src: url('../fonts/MuseoSansCyrl-100.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/MuseoSansCyrl-100.woff') format('woff'),
+    url('../fonts/MuseoSansCyrl-100.ttf') format('truetype');
+    font-weight: 100;
+}
+
+
+* {
+    font-family: 'Museo Sans';
+}
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+}
