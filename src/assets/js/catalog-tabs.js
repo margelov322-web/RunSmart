@@ -1,4 +1,6 @@
-'use strict';
+'use strict'
+
+import { querySelector } from "svgo";
 
 const refs = {
     navigation: document.querySelector('#tabs-content-1 [data-navigation]'),
@@ -39,10 +41,28 @@ function addCurrentClasses(currentTab) { //сопоставление конте
 };
 
 
-const ItemsRefs = document.querySelectorAll('.catalog-item__link');
+const itemLinks = document.querySelectorAll('.catalog-item__link')
+const itemLinksBack = document.querySelectorAll('.catalog-item__link-back')
+const catalogItems = document.querySelectorAll('.catalog-item__content')
+const catalogItemsInfo = document.querySelectorAll('.catalog-item__info')
 
-ItemsRefs.forEach(a => {
-    a.addEventListener('click', function() {
-        console.log('clicked');
+// itemLinks.forEach(anyLink => {
+//     anyLink.addEventListener('click', function(event) {
+//         event.preventDefault()
+//         console.log(event)
+//         catalogItems[i].classList.toggle('catalog-item__content_active')
+//     })
+// });
+
+for (let i = 0;; i++) {
+    itemLinks[i].addEventListener('click', function(event) {
+        event.preventDefault()
+        catalogItems[i].classList.toggle('catalog-item__content_active')
+        catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
     })
-})
+    itemLinksBack[i].addEventListener('click', function(event) {
+        event.preventDefault()
+        catalogItems[i].classList.toggle('catalog-item__content_active')
+        catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
+    })
+}
