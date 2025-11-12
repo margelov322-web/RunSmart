@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
+base: RunSmart
+
 export default defineConfig(() => {
   return {
     plugins: [
@@ -24,5 +26,6 @@ export default defineConfig(() => {
       Inspect(),
       tailwindcss(),
     ],
+    base: '/RunSmart/'
   };
 });

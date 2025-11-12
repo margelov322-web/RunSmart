@@ -22,7 +22,7 @@
             </div>
             <div class="header__contacts">
               <a href="tel:+799999999" class="header__phone">+7 (499) 922-89-74</a>
-              <button class="button">заказать звонок</button>
+              <button class="button" data-modal="consultation">заказать звонок</button>
             </div>
             </header>
           <div class="first-screen__content-wrapper">            
@@ -40,7 +40,7 @@
               <div class="first-screen__bullit">
                 <img src="./src/assets/icons/messages-icon.png" alt="">Ответим на все вопросы</div>
             </div>
-            <button class="button button_first-section">
+            <button class="button button_first-section" data-modal="consultation">
               заказать консультацию
             </button>
             <div class="first-screen__catalog-link">
@@ -59,9 +59,9 @@
         <div class="consultation__descr">
           Просто заполните форму заявки и мы перезвоним вам в течении 10 минут
         </div>
-        <form class="contact-form" action="#">
+        <form id="callback" class="contact-form" action="#" method="post" name="submit-to-google-sheet">
             <input name="name" type="text" placeholder="Ваше имя">
-            <input name="phone" type="number" required placeholder="Ваш телефон">
+            <input name="phone" type="text" required placeholder="Ваш телефон" minlength="8" maxlength="12">
             <input name="email" type="email" placeholder="Ваш E-mail">
             <button class="button button__consultation">
               заказать консультацию
@@ -151,7 +151,7 @@
                 <br>
                 TAB-1__4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -194,7 +194,7 @@
                 <br>
                 TAB-1__4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 TAB-1__КУПИТЬ
               </button>
             </div>
@@ -237,7 +237,7 @@
                 <br>
                 TAB-1__4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 TAB-1__КУПИТЬ
               </button>
             </div>
@@ -280,7 +280,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -323,7 +323,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -366,7 +366,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -412,7 +412,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -455,7 +455,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -498,7 +498,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -541,7 +541,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -584,7 +584,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -624,7 +624,7 @@
                 <br>
                 4 500 руб.
               </div>
-              <button class="button button-catalog">
+              <button class="button button-catalog" data-modal="order">
                 КУПИТЬ
               </button>
             </div>
@@ -636,4 +636,71 @@
     <script type="module" src="/src/main.js" defer></script>
 
   </body>
+
+  <footer class="footer">
+    <div class="footer__info">
+      <address>Москва, Мясницкий проезд, д.3с1</address>
+      <a href="8 (499) 922-89-74" class="footer__phone">8 (499) 922-89-74</a>
+      <div class="footer__social">
+        <a href="#" class="footer__social-item"><img src="./src/assets/icons/facebook.svg" alt="Facebook"></a>
+        <a href="#" class="footer__social-item"><img src="./src/assets/icons/Instagram.svg" alt="Instagram"></a>
+        <a href="#" class="footer__social-item"><img src="./src/assets/icons/pinterest.svg" alt="Pinterest"></a>
+      </div>
+    </div>
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af983f7820d67e7d78e8aa7411829219ed71a9b54a4fd72c6140c8ab7cec6a5e3&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
+  </footer>
+
+  <div class="overlay">
+    <div class="modal" id="consultation">
+      <div class="modal__close">
+        &times;
+      </div>
+      <div class="modal__subtitle">
+        Просто заполните форму заявки
+      </div>
+      <div class="modal__descr">
+        и мы перезвоним вам в течении 10 минут
+      </div>
+      <form id="consultation" class="contact-form contact-form_mt25" action="#" method="post" name="submit-to-google-sheet">
+        <input name="name" type="text" placeholder="Ваше имя">
+        <input name="phone" type="text" required placeholder="Ваш телефон" minlength="8" maxlength="12">
+        <input name="email" type="email" placeholder="Ваш E-mail">
+        <button class="button button__submit" type="submit">
+          заказать консультацию
+        </button>
+    </form>
+    </div>
+
+    <div class="modal" id="order">
+      <div class="modal__close">
+        &times;
+      </div>
+      <div class="modal__subtitle">
+        Ваш заказ:
+      </div>
+      <div class="modal__descr">
+        Пульсометр Polar FT1
+      </div>
+      <form id="order" class="contact-form contact-form_mt25" action="#" method="post" name="submit-to-google-sheet">
+        <input name="name" type="text" placeholder="Ваше имя">
+        <input name="phone" type="text" required placeholder="Ваш телефон" minlength="8" maxlength="12">
+        <input name="email" type="email" placeholder="Ваш E-mail">
+        <button class="button button__submit" type="submit">
+          купить
+        </button>
+    </form>
+    </div>
+
+    <div class="modal" id="thanks">
+      <div class="modal__close">
+        &times;
+      </div>
+      <div class="modal__subtitle">
+        Ваш заказ:
+      </div>
+      <div class="modal__descr">
+        Пульсометр Polar FT1
+    </div>
+  </div>
+
 </html>

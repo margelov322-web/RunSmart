@@ -46,23 +46,22 @@ const itemLinksBack = document.querySelectorAll('.catalog-item__link-back')
 const catalogItems = document.querySelectorAll('.catalog-item__content')
 const catalogItemsInfo = document.querySelectorAll('.catalog-item__info')
 
-// itemLinks.forEach(anyLink => {
-//     anyLink.addEventListener('click', function(event) {
-//         event.preventDefault()
-//         console.log(event)
-//         catalogItems[i].classList.toggle('catalog-item__content_active')
-//     })
-// });
-
-for (let i = 0;; i++) {
-    itemLinks[i].addEventListener('click', function(event) {
-        event.preventDefault()
-        catalogItems[i].classList.toggle('catalog-item__content_active')
-        catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
-    })
-    itemLinksBack[i].addEventListener('click', function(event) {
-        event.preventDefault()
-        catalogItems[i].classList.toggle('catalog-item__content_active')
-        catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
-    })
+// Первый цикл — для itemLinks
+for (let i = 0; i < 10; i++) {
+  itemLinks[i].addEventListener('click', function(event) {
+    event.preventDefault()
+    catalogItems[i].classList.toggle('catalog-item__content_active')
+    catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
+  });
 }
+
+// Второй цикл — для itemLinksBack
+for (let i = 0; i < 10; i++) {
+  itemLinksBack[i].addEventListener('click', function(event) {
+    event.preventDefault()
+    catalogItems[i].classList.toggle('catalog-item__content_active')
+    catalogItemsInfo[i].classList.toggle('catalog-item__info_active')
+  });
+}
+
+
